@@ -25,8 +25,6 @@ class EcommercePage {
         cy.get('#checkout').click();
     }
 
-    console.log('ca3423');
-
     fillDeliveryForm(firstName: string, lastName: string, postalCode: string) {
         cy.get('#first-name').type(firstName);
         cy.get('#last-name').type(lastName);

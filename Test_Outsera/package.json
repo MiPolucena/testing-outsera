@@ -3,7 +3,7 @@
     "cypress:open": "cross-env ENV=dev npx cypress open --e2e",
     "load_tests:k6": "k6 run k6/load_tests/load_tests.js",
     "stress_tests:k6": "k6 run k6/stress_tests/stress_tests.js",
-    "cypress:run": "cypress run",
+    "cypress:run": "cypress run --browser chrome",
     "cypress:report": "npx mochawesome-merge cypress/reports/*.json | npx mochawesome-report-generator -o cypress/reports/finalReport"
   },
   "devDependencies": {

@@ -1,0 +1,220 @@
+{
+  "stats": {
+    "suites": 3,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-10-30T01:44:30.003Z",
+    "end": "2024-10-30T01:44:32.924Z",
+    "duration": 2921,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "65a0e46a-e6b1-4b5e-bf3d-a62a3864cc56",
+      "title": "",
+      "fullFile": "cypress\\e2e\\petStore\\petStore.cy.js",
+      "file": "cypress\\e2e\\petStore\\petStore.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "30d145d2-bffe-4683-a147-1f4b1693ff79",
+          "title": "Teste E2E da API PetStore",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "afe4bdec-8286-457d-ab15-5fbcb43e509e",
+              "title": "Cenários Positivos",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Deve retornar pets disponíveis ao consultar por status \"available\"",
+                  "fullTitle": "Teste E2E da API PetStore Cenários Positivos Deve retornar pets disponíveis ao consultar por status \"available\"",
+                  "timedOut": null,
+                  "duration": 1974,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "petStorePage.getPetsByStatus('available').then(response => {\n  expect(response.status).to.eq(200);\n  expect(response.headers['access-control-allow-headers']).to.eq('Content-Type, api_key, Authorization');\n  expect(response.headers['access-control-allow-methods']).to.eq(\"GET, POST, DELETE, PUT\");\n});",
+                  "err": {},
+                  "uuid": "0d825169-9a65-48ab-b109-e69ff05b9778",
+                  "parentUUID": "afe4bdec-8286-457d-ab15-5fbcb43e509e",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Deve criar um novo pet com sucesso",
+                  "fullTitle": "Teste E2E da API PetStore Cenários Positivos Deve criar um novo pet com sucesso",
+                  "timedOut": null,
+                  "duration": 198,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "petStorePage.createPet(_petData.petData).then(response => {\n  Cypress.env(\"saveResponsePet\", response.body);\n  expect(response.status).to.eq(200);\n  expect(response.body.id).to.eq(12345);\n  expect(response.body.name).to.eq('doggie teste');\n  expect(response.body.status).to.eq(\"available\");\n});",
+                  "err": {},
+                  "uuid": "f3db8cea-2cf7-4f7e-98c7-8da9a717e13f",
+                  "parentUUID": "afe4bdec-8286-457d-ab15-5fbcb43e509e",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Deve atualizar os dados de um pet existente",
+                  "fullTitle": "Teste E2E da API PetStore Cenários Positivos Deve atualizar os dados de um pet existente",
+                  "timedOut": null,
+                  "duration": 193,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const getResponsePet = Cypress.env(\"saveResponsePet\");\npetStorePage.updatePet(_petData.updatedPetData).then(response => {\n  expect(response.status).to.eq(200);\n  expect(response.body.id).to.eq(getResponsePet.id);\n  expect(response.body.name).to.eq('update doggie teste');\n  expect(response.body.status).to.eq(\"unavailable\");\n});",
+                  "err": {},
+                  "uuid": "ce00d12e-18cb-4704-b5f1-9fe2a6b6bc33",
+                  "parentUUID": "afe4bdec-8286-457d-ab15-5fbcb43e509e",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Deve excluir um pet existente com sucesso",
+                  "fullTitle": "Teste E2E da API PetStore Cenários Positivos Deve excluir um pet existente com sucesso",
+                  "timedOut": null,
+                  "duration": 194,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const getResponsePet = Cypress.env(\"saveResponsePet\");\npetStorePage.deletePet(getResponsePet.id).then(response => {\n  expect(response.status).to.eq(200);\n});",
+                  "err": {},
+                  "uuid": "93339edc-5f7f-4ee0-81c2-9fec182f0e2a",
+                  "parentUUID": "afe4bdec-8286-457d-ab15-5fbcb43e509e",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "0d825169-9a65-48ab-b109-e69ff05b9778",
+                "f3db8cea-2cf7-4f7e-98c7-8da9a717e13f",
+                "ce00d12e-18cb-4704-b5f1-9fe2a6b6bc33",
+                "93339edc-5f7f-4ee0-81c2-9fec182f0e2a"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 2559,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "a4973fd5-f198-4dfc-b804-46b95a37fb98",
+              "title": "Cenários Negativos",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Deve falhar ao criar um pet com dados inválidos",
+                  "fullTitle": "Teste E2E da API PetStore Cenários Negativos Deve falhar ao criar um pet com dados inválidos",
+                  "timedOut": null,
+                  "duration": 191,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "petStorePage.createPet(_petData.invalidPetData).then(response => {\n  expect(response.status).to.not.eq(400);\n});",
+                  "err": {},
+                  "uuid": "ef709091-0fdf-43ba-b6d0-55742e9a4b34",
+                  "parentUUID": "a4973fd5-f198-4dfc-b804-46b95a37fb98",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "ef709091-0fdf-43ba-b6d0-55742e9a4b34"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 191,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

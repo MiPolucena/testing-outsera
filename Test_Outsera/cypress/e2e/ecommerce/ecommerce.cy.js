@@ -26,8 +26,6 @@ describe('Teste de Fluxo do E-commerce', () => {
         ecommercePage.validateCheckoutItems();
         ecommercePage.completeOrder();
 
-        console.log('ca3423');
-
         // Valida a tela de Finalização
         ecommercePage.verifyOrderCompletion();
     });

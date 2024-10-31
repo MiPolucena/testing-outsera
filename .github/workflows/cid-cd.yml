@@ -42,11 +42,7 @@ jobs:
 
       - name: Set up Cypress
         uses: cypress-io/github-action@v2
-        with:
-          start: npm start  # Comando para iniciar seu app (se necessário)
-          wait-on: 'http://localhost:3000'  # URL do seu app
-          wait-on-timeout: 60
-
+ 
       - name: Run Cypress tests
         run: npm run cypress:run
 
@@ -72,7 +68,7 @@ jobs:
           npm run stress_tests:k6
 
       - name: Upload K6 reports
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: k6-reports
           path: reports/k6  # Caminho para os relatórios K6

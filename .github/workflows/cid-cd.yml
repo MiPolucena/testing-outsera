@@ -36,7 +36,7 @@ jobs:
   #     - name: Run Cypress tests
   #       run: npm run cypress:run
 
-  k6_tests:
+  k6_tests_carga:
     runs-on: ubuntu-latest
 
     steps:
@@ -51,4 +51,19 @@ jobs:
         with:
           path: |
             ./k6/load_tests/load_tests.js
-            ./k6/stress_tests/stres_tests.js
+
+  k6_tests_stress:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup K6
+        uses: grafana/setup-k6-action@v1
+
+      - name: Run K6 tests
+        uses: grafana/run-k6-action@v1
+        with:
+          path: |
+            ./k6/stress_tests/stres_tests.js            

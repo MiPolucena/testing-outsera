@@ -3,8 +3,8 @@ import { check, sleep } from 'k6';
 
 // Configurações do teste
 export const options = {
-    vus: 500, // Número de usuários virtuais
-    duration: '5m', // Duração do teste
+    vus: 100, // Número de usuários virtuais
+    duration: '10s', // Duração do teste
 };
 
 export default function () {

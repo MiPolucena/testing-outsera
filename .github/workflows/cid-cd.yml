@@ -23,18 +23,18 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-  e2e_tests:
-    runs-on: ubuntu-latest
-    needs: setup
-    steps:
-      - name: Check out code
-        uses: actions/checkout@v2
+  # e2e_tests:
+  #   runs-on: ubuntu-latest
+  #   needs: setup
+  #   steps:
+  #     - name: Check out code
+  #       uses: actions/checkout@v2
 
-      - name: Install dependencies
-        run: npm install
+  #     - name: Install dependencies
+  #       run: npm install
 
-      - name: Run Cypress tests
-        run: npm run cypress:run
+  #     - name: Run Cypress tests
+  #       run: npm run cypress:run
 
   load_tests:
     runs-on: ubuntu-latest

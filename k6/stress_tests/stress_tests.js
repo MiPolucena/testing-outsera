@@ -4,9 +4,9 @@ import { check, sleep } from 'k6';
 // Configurações do teste
 export const options = {
     stages: [
-        { duration: '2m', target: 250 }, // Aumenta para 250 usuários em 2 minutos
-        { duration: '3m', target: 500 }, // Aumenta para 500 usuários em 3 minutos
-        { duration: '2m', target: 0 },    // Reduz para 0 usuários em 2 minutos
+        { duration: '2s', target: 250 }, // Aumenta para 250 usuários em 2 minutos
+        { duration: '3s', target: 500 }, // Aumenta para 500 usuários em 3 minutos
+        { duration: '2s', target: 0 },    // Reduz para 0 usuários em 2 minutos
     ],
 };
 

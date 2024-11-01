@@ -51,3 +51,4 @@ jobs:
         with:
           path: |
             ./k6/load_tests/load_tests.js
+            ./k6/stress_tests/stres_tests.js

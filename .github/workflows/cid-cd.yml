@@ -40,11 +40,8 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
 
-      - name: Set up Cypress
-        uses: cypress-io/github-action@v2
- 
       - name: Run Cypress tests
-        run: npm run cypress:run
+        run: npm run cypress:run      
 
   load_tests:
     runs-on: ubuntu-latest
@@ -52,14 +49,14 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v2
-
-      - name: Run load tests with K6
+  
+      - name: Install K6
         run: |
-          npm run load_tests:k6
-          npm run stress_tests:k6
-
-      - name: Upload K6 reports
-        uses: actions/upload-artifact@v3
-        with:
-          name: k6-reports
-          path: reports/k6  # Caminho para os relatórios K6
+          sudo apt-get update
+          sudo apt-get install -y k6
+  
+      - name: Run load tests
+        run: npm run load_tests:k6
+  
+      - name: Run stress tests
+        run: npm run stress_tests:k6

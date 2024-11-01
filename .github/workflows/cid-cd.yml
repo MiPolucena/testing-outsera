@@ -43,8 +43,9 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
 
-      - name: Install dependencies
-        run: npm install
+      - name: Install K6
+        run: |
+          curl -sSL https://raw.githubusercontent.com/grafana/k6/master/install.sh | bash
 
       - name: Run load tests with K6
         run: |

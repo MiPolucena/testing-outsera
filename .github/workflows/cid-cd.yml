@@ -66,4 +66,4 @@ jobs:
         uses: grafana/run-k6-action@v1
         with:
           path: |
-            ./k6/stress_tests/stres_tests.js            
+            ./k6/stress_tests/stress_tests.js            

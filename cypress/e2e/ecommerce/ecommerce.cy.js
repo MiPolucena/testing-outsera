@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-import EcommercePage from "../../pages/ecommerce/EcommercePage";
+import EcommercePage from "../../pages/ecommerce/ecommercePage";
 
 // Teste End-to-end
 describe('Teste de Fluxo do E-commerce', () => {

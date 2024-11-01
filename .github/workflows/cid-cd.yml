@@ -50,4 +50,4 @@ jobs:
         uses: grafana/run-k6-action@v1
         with:
           path: |
-            ./k6/load_tests/load_tests.js  # Ajuste o caminho para o seu script K6
+            ./k6/load_tests/load_tests.js
